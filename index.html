@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ResulvIT">
+<head>
+    <meta charset="UTF-8">
+    <title>Resulv IT Test</title>
+</head>
+
+    <body ng-controller="ResulvITController">
+        <p>Hello: <input type="text" ng-model="planetname"></input><button ng-click="save()">Save</button></p>
+
+        <p>{{planetList}}</p>
+
+        <select multiple="multiple" ng-options="pl.name as pl.name for pl in planets | orderBy:'id'" size="10" ng-model="plnames">
+        </select>
+
+        <p>{{plnames}}</p>
+        <p ng-repeat="pls in plnames">{{'Hello ' + pls}}</p>
+
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
